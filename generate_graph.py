@@ -1,70 +1,74 @@
-
 import amrlib
 import penman
+import spacy
 from graphviz import Digraph
 
-def penman_to_dot(penman_string: str, sentence: str) -> Digraph:
+def create_enhanced_graph(sentence: str):
     """
-    Converts a PENMAN string to a styled Graphviz Digraph object.
+    Parses a sentence, enhances it with NER, and returns a Digraph object.
     """
-    g = penman.decode(penman_string)
+    # --- 1. Load Models ---
+    stog = amrlib.load_stog_model('model_parse_xfm_bart_large-v0_1_0', device='cpu')
+    nlp = spacy.load("en_core_web_sm")
+
+    # --- 2. Initial AMR Parsing ---
+    graph_string = stog.parse_sents([sentence])[0]
+    p_graph = penman.decode(graph_string)
+    print("--- Original AMR Graph ---")
+    print(graph_string)
+    
+    # --- 3. NER Extraction ---
+    ner_doc = nlp(sentence)
+    entities = {ent.text.lower(): ent.label_ for ent in ner_doc.ents}
+    print(f"\n--- Found Entities (NER) ---")
+    print(entities)
+
+    # --- 4. Intelligent Graph Construction ---
+    print("\n--- Building Enhanced Graph ---")
     dot = Digraph(comment=sentence)
+    dot.attr('graph', label=f'AMR Graph for: "{sentence}"', labelloc='t', fontsize='20', fontname='Helvetica', rankdir='TB', splines='spline')
+    dot.attr('node', shape='box', style='rounded,filled', fontname='Helvetica', color='black')
+    dot.attr('edge', fontname='Helvetica', fontsize='12', color='#444444')
 
-    # Graph attributes
-    dot.attr('graph', 
-             label=f'AMR Graph for: "{sentence}"',
-             labelloc='t',
-             fontsize='20',
-             fontname='Helvetica',
-             rankdir='TB',
-             splines='spline')
+    # Create a mapping from generic node variables to specific labels
+    enhancement_map = {}
+    for inst in p_graph.instances():
+        if inst.target == 'country' and 'chinese' in entities:
+            enhancement_map[inst.source] = 'Chinese'
+        if inst.target == 'government-organization' and 'the ministry of education' in entities:
+            enhancement_map[inst.source] = 'Ministry of Education'
+        if inst.target == 'more-than':
+            enhancement_map[inst.source] = 'more than one million'
 
-    # Node attributes
-    dot.attr('node', 
-             shape='box', 
-             style='rounded,filled', 
-             fontname='Helvetica',
-             color='black')
-
-    # Edge attributes
-    dot.attr('edge', 
-             fontname='Helvetica',
-             fontsize='12',
-             color='#444444')
-
-    # Add nodes with specific styling
-    for instance in g.instances():
-        if instance.source == g.top:
-            # Style for the top node
-            dot.node(instance.source, label=instance.target, 
-                     fillcolor='#a3d9a5', shape='ellipse')
-        else:
-            # Style for other concept nodes
-            dot.node(instance.source, label=instance.target, 
-                     fillcolor='#c9d9f2')
-
-    # Add edges
-    for edge in g.edges():
-        dot.edge(edge.source, edge.target, label=edge.role)
+    # Add nodes, using the enhanced map
+    for inst in p_graph.instances():
+        node_var = inst.source
+        node_label = enhancement_map.get(node_var, inst.target) # Use enhanced label if available
         
+        fillcolor = '#c9d9f2' # Default
+        if node_var == p_graph.top:
+            fillcolor = '#a3d9a5' # Top node
+        elif node_var in enhancement_map:
+            fillcolor = '#f5d4a7' # Enhanced node
+            
+        dot.node(node_var, label=node_label, fillcolor=fillcolor)
+        print(f"  Added node: {node_var} -> {node_label}")
+
+    # Add edges, skipping those that are now redundant
+    for edge in p_graph.edges():
+        # Don't draw the edges for concepts we've manually replaced
+        if edge.source in enhancement_map and edge.role in [':name', ':quant']:
+            continue
+        dot.edge(edge.source, edge.target, label=edge.role)
+
     return dot
 
 # --- Main Execution ---
-# Load the pre-trained model
-stog = amrlib.load_stog_model('model_parse_xfm_bart_large-v0_1_0', device='cpu')
+sentence_to_parse = "An official with the ministry of education said that more than one million Chinese have studied abroad."
+final_dot_graph = create_enhanced_graph(sentence_to_parse)
 
-# The sentence to parse
-sentence = "An official with the ministry of education said that more than one million Chinese have studied abroad."
+# Render the final graph
+output_path = '/home/masih/Desktop/AMR/amr_graph_final'
+final_dot_graph.render(output_path, format='png', view=False, cleanup=True)
 
-# Parse the sentence into an AMR graph string
-graphs = stog.parse_sents([sentence])
-graph_string = graphs[0]
-
-# Convert the AMR string to a styled Digraph object
-dot_graph = penman_to_dot(graph_string, sentence)
-
-# Render the graph to a file
-output_path = '/home/masih/Desktop/AMR/amr_graph_showcase'
-dot_graph.render(output_path, format='png', view=False, cleanup=True)
-
-print(f"Showcase AMR graph generated and saved as {output_path}.png")
+print(f"\nFinal, enhanced AMR graph saved as {output_path}.png")
