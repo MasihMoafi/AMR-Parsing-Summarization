@@ -1,0 +1,22 @@
+# .gitignore
+
+# Ignore datasets
+*.csv
+
+# Ignore model files
+*.tar.gz
+*.bin
+model_parse_xfm_bart_large-v0_1_0/
+
+# Ignore generated images
+# *.png
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE / System files
+.vscode/
+.idea/
+.DS_Store

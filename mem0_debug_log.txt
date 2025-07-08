@@ -1,0 +1,817 @@
+[2025-07-08 14:55:06.850478] [Mem0] Initialized. Database path: /home/masih/Desktop/A-Modular-Kingdom/agent_chroma_db
+[2025-07-08 14:55:23.771325] Processing conversation: 'User: What is the latest news from OpenAI?
+Assistant: <think>
+Okay, the user is asking for the latest news from OpenAI. Let me check my sources. My primary memory doesn't have recent updates. The external knowledge mentions that OpenAI has overhauled security operations to protect against corporate espionage, as reported by the Financial Times. There's also mention of their latest product and company news, but the details are vague. Since I can't access real-time data, I should rely on the provided external info. I need to present the known security overhaul and mention that there's more news on their latest product, but I can't provide specifics. Also, direct them to Reuters or Newsweek for more details. Make sure to state that my information is based on available external sources and not real-time data.
+</think>
+
+Based on the external knowledge sources provided, the latest news from OpenAI includes reports of **overhauled security operations** to protect against corporate espionage, as highlighted by *The Financial Times*. Additionally, there are mentions of **new product developments** and **company news**, though specific details are not elaborated in the provided sources. 
+
+For the most current and detailed updates, I recommend checking **Reuters.com** or **Newsweek's archives** on OpenAI, as these outlets provide up-to-date coverage of the organization's activities. 
+
+Note: My information is derived from the external knowledge provided and does not include real-time data or internet searches.'
+[2025-07-08 14:55:23.771403] DEBUG: Extracting facts from:
+---
+User: What is the latest news from OpenAI?
+Assistant: <think>
+Okay, the user is asking for the latest news from OpenAI. Let me check my sources. My primary memory doesn't have recent updates. The external knowledge mentions that OpenAI has overhauled security operations to protect against corporate espionage, as reported by the Financial Times. There's also mention of their latest product and company news, but the details are vague. Since I can't access real-time data, I should rely on the provided external info. I need to present the known security overhaul and mention that there's more news on their latest product, but I can't provide specifics. Also, direct them to Reuters or Newsweek for more details. Make sure to state that my information is based on available external sources and not real-time data.
+</think>
+
+Based on the external knowledge sources provided, the latest news from OpenAI includes reports of **overhauled security operations** to protect against corporate espionage, as highlighted by *The Financial Times*. Additionally, there are mentions of **new product developments** and **company news**, though specific details are not elaborated in the provided sources. 
+
+For the most current and detailed updates, I recommend checking **Reuters.com** or **Newsweek's archives** on OpenAI, as these outlets provide up-to-date coverage of the organization's activities. 
+
+Note: My information is derived from the external knowledge provided and does not include real-time data or internet searches.
+---
+[2025-07-08 14:55:25.324298] DEBUG: Raw fact extraction response:
+---
+{"facts": ["OpenAI has overhauled security operations to protect against corporate espionage.", "There are reports of new product developments and company news from OpenAI.", "Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities."]}
+---
+[2025-07-08 14:55:25.324390] Extracted facts: ['OpenAI has overhauled security operations to protect against corporate espionage.', 'There are reports of new product developments and company news from OpenAI.', "Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities."]
+[2025-07-08 14:55:25.324415] Processing fact: 'OpenAI has overhauled security operations to protect against corporate espionage.'
+[2025-07-08 14:55:25.539529] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 761b8b9b-b0ac-41ac-80b4-7bc560c0138c, Fact: The process involves three steps: attack by the electrophile, loss of a proton, and restoration of aromaticity.
+- ID: cda271cc-8566-4603-ab37-8167f95979b3, Fact: Electrophilic aromatic substitution is a reaction mechanism in organic chemistry where an electrophile replaces a hydrogen atom on an aromatic ring.
+- ID: efa3c497-64a0-4720-896d-6dc26fa9208d, Fact: Substituents on the ring influence the reaction's direction (ortho, meta, or para) based on their electronic effects.
+
+New Fact: "OpenAI has overhauled security operations to protect against corporate espionage."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 14:55:26.659384] DEBUG: Raw LLM Response content:
+---
+{"operation": "NOOP", "reason": "The new fact is unrelated to the existing memories about electrophilic aromatic substitution and its mechanism."}
+---
+[2025-07-08 14:55:26.659507] DEBUG: Parsed Decision:
+---
+{
+  "operation": "NOOP",
+  "reason": "The new fact is unrelated to the existing memories about electrophilic aromatic substitution and its mechanism."
+}
+---
+[2025-07-08 14:55:26.659541] LLM Decision for fact 'OpenAI has overhauled security operations to protect against corporate espionage.': {'operation': 'NOOP', 'reason': 'The new fact is unrelated to the existing memories about electrophilic aromatic substitution and its mechanism.'}
+[2025-07-08 14:55:26.659564] HOST ACTION: NOOP for fact 'OpenAI has overhauled security operations to protect against corporate espionage.'. Reason: The new fact is unrelated to the existing memories about electrophilic aromatic substitution and its mechanism.
+[2025-07-08 14:55:26.659583] Processing fact: 'There are reports of new product developments and company news from OpenAI.'
+[2025-07-08 14:55:26.875052] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 7a9ab9d0-a80b-4531-b919-a95cc23aba40, Fact: I currently do not have access to real-time weather data or external internet resources to check the current weather in Tehran.
+- ID: bd911320-50d1-4c3b-861e-ef23592d4200, Fact: Examples include nitration, sulfonation, and halogenation.
+- ID: 761b8b9b-b0ac-41ac-80b4-7bc560c0138c, Fact: The process involves three steps: attack by the electrophile, loss of a proton, and restoration of aromaticity.
+
+New Fact: "There are reports of new product developments and company news from OpenAI."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 14:55:27.728943] DEBUG: Raw LLM Response content:
+---
+{"operation": "ADD", "fact": "There are reports of new product developments and company news from OpenAI."}
+---
+[2025-07-08 14:55:27.729061] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "There are reports of new product developments and company news from OpenAI."
+}
+---
+[2025-07-08 14:55:27.729108] LLM Decision for fact 'There are reports of new product developments and company news from OpenAI.': {'operation': 'ADD', 'fact': 'There are reports of new product developments and company news from OpenAI.'}
+[2025-07-08 14:55:27.729157] DEBUG: Executing DB operation: Op='ADD', Fact='There are reports of new product developments and company news from OpenAI.', ID='None'
+[2025-07-08 14:55:27.944153] [Mem0] HOST ACTION: ADDED new memory. ID: 39951d33
+[2025-07-08 14:55:27.944247] Processing fact: 'Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities.'
+[2025-07-08 14:55:28.155160] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 39951d33-d657-4b6a-a397-e7505fc2dbe3, Fact: There are reports of new product developments and company news from OpenAI.
+- ID: 7a9ab9d0-a80b-4531-b919-a95cc23aba40, Fact: I currently do not have access to real-time weather data or external internet resources to check the current weather in Tehran.
+- ID: bd911320-50d1-4c3b-861e-ef23592d4200, Fact: Examples include nitration, sulfonation, and halogenation.
+
+New Fact: "Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 14:55:29.041147] DEBUG: Raw LLM Response content:
+---
+{"operation": "ADD", "fact": "Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities."}
+---
+[2025-07-08 14:55:29.041341] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities."
+}
+---
+[2025-07-08 14:55:29.041410] LLM Decision for fact 'Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities.': {'operation': 'ADD', 'fact': "Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities."}
+[2025-07-08 14:55:29.041446] DEBUG: Executing DB operation: Op='ADD', Fact='Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities.', ID='None'
+[2025-07-08 14:55:29.251358] [Mem0] HOST ACTION: ADDED new memory. ID: 99a1d818
+[2025-07-08 14:56:09.446003] Processing conversation: 'User: What's the price of bitcoin today? In fact, what day is it? Today?
+Assistant: <think>
+Okay, the user is asking for today's Bitcoin price and also wants to know the current day. Let me start by checking the external knowledge sources provided.
+
+Looking at the external knowledge section, there are several entries with different Bitcoin prices. The first one says $108,778.16 USD, then $108,140.17, followed by $108,027.00, and another mentions $109,117. The market caps and trading volumes vary slightly between these entries. 
+
+Since the user is asking for the price today, I need to determine which of these is the most recent. However, all the entries seem to be from different times, possibly from the same day but different updates. The latest one mentions a price of $109,117 with a market cap of $2.2T. But wait, some entries have conflicting numbers. For example, one says $108,778.16, another $108,140.17, and another $108,027.00. There's also a mention of the price being down -0.16% since the last hour and -0.83% since yesterday. 
+
+I should check if there's a consensus or if they are all part of the same data set. The entries might be from different sources or different times. The user also asked for the current day. Since my memory section doesn't have information about the current date, but the external knowledge mentions real-time updates, I need to rely on the latest data provided. 
+
+Wait, the user might be confused because the external knowledge has multiple prices. To resolve this, I should note that the prices vary slightly, which could be due to different data sources or time intervals. The most recent entry in the external knowledge is $109,117, but another entry says $108,027.00. However, the first entry mentions a 24-hour volume of $33,367,944,094.23, which is a very high volume, possibly from a different time. 
+
+Given the inconsistency, I should present the latest price from the external knowledge, which is $109,117, and mention the variations. Also, since the user asked for the day, but the external knowledge doesn't provide the date, I can state that the current day is not available through the provided sources. However, the user might be expecting the current date, so maybe I should check if there's any date mentioned. 
+
+Looking again, the external knowledge entries don't include dates, only prices and volumes. Therefore, I can only provide the latest price available. The user might also be testing if I can handle conflicting data, so I need to clarify that the prices vary and suggest checking a reliable source for the most accurate and up-to-date information. 
+
+In summary, the answer should state the latest price from the external knowledge, note the discrepancies, and mention the current day isn't available through the provided sources.
+</think>
+
+The current price of Bitcoin (BTC) is **$109,117** USD according to the latest data from the external knowledge sources. However, there are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources. For the most accurate and real-time price, please consult a reliable cryptocurrency tracking platform like CoinMarketCap or CoinGecko.  
+
+As for the current day, the external knowledge sources do not provide a specific date. If you need the current calendar date, I recommend checking a calendar service or a web search for the current date.'
+[2025-07-08 14:56:09.446076] DEBUG: Extracting facts from:
+---
+User: What's the price of bitcoin today? In fact, what day is it? Today?
+Assistant: <think>
+Okay, the user is asking for today's Bitcoin price and also wants to know the current day. Let me start by checking the external knowledge sources provided.
+
+Looking at the external knowledge section, there are several entries with different Bitcoin prices. The first one says $108,778.16 USD, then $108,140.17, followed by $108,027.00, and another mentions $109,117. The market caps and trading volumes vary slightly between these entries. 
+
+Since the user is asking for the price today, I need to determine which of these is the most recent. However, all the entries seem to be from different times, possibly from the same day but different updates. The latest one mentions a price of $109,117 with a market cap of $2.2T. But wait, some entries have conflicting numbers. For example, one says $108,778.16, another $108,140.17, and another $108,027.00. There's also a mention of the price being down -0.16% since the last hour and -0.83% since yesterday. 
+
+I should check if there's a consensus or if they are all part of the same data set. The entries might be from different sources or different times. The user also asked for the current day. Since my memory section doesn't have information about the current date, but the external knowledge mentions real-time updates, I need to rely on the latest data provided. 
+
+Wait, the user might be confused because the external knowledge has multiple prices. To resolve this, I should note that the prices vary slightly, which could be due to different data sources or time intervals. The most recent entry in the external knowledge is $109,117, but another entry says $108,027.00. However, the first entry mentions a 24-hour volume of $33,367,944,094.23, which is a very high volume, possibly from a different time. 
+
+Given the inconsistency, I should present the latest price from the external knowledge, which is $109,117, and mention the variations. Also, since the user asked for the day, but the external knowledge doesn't provide the date, I can state that the current day is not available through the provided sources. However, the user might be expecting the current date, so maybe I should check if there's any date mentioned. 
+
+Looking again, the external knowledge entries don't include dates, only prices and volumes. Therefore, I can only provide the latest price available. The user might also be testing if I can handle conflicting data, so I need to clarify that the prices vary and suggest checking a reliable source for the most accurate and up-to-date information. 
+
+In summary, the answer should state the latest price from the external knowledge, note the discrepancies, and mention the current day isn't available through the provided sources.
+</think>
+
+The current price of Bitcoin (BTC) is **$109,117** USD according to the latest data from the external knowledge sources. However, there are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources. For the most accurate and real-time price, please consult a reliable cryptocurrency tracking platform like CoinMarketCap or CoinGecko.  
+
+As for the current day, the external knowledge sources do not provide a specific date. If you need the current calendar date, I recommend checking a calendar service or a web search for the current date.
+---
+[2025-07-08 14:56:12.793898] DEBUG: Raw fact extraction response:
+---
+{"facts": ["The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources.", "There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources.", "The external knowledge sources do not provide a specific date for the current day."]}
+---
+[2025-07-08 14:56:12.793980] Extracted facts: ['The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources.', 'There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources.', 'The external knowledge sources do not provide a specific date for the current day.']
+[2025-07-08 14:56:12.794002] Processing fact: 'The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources.'
+[2025-07-08 14:56:12.993502] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 99a1d818-31cd-4591-bdb6-ec2cc1629c7b, Fact: Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities.
+- ID: 39951d33-d657-4b6a-a397-e7505fc2dbe3, Fact: There are reports of new product developments and company news from OpenAI.
+- ID: d60a4168-fbaf-4bf4-9d08-01aba676b4c2, Fact: There is no DNS button on any modem.
+
+New Fact: "The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 14:56:14.317069] DEBUG: Raw LLM Response content:
+---
+{
+
+
+  "operation": "ADD",
+  "fact": "The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources."
+}
+---
+[2025-07-08 14:56:14.317219] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources."
+}
+---
+[2025-07-08 14:56:14.317254] LLM Decision for fact 'The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources.': {'operation': 'ADD', 'fact': 'The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources.'}
+[2025-07-08 14:56:14.317294] DEBUG: Executing DB operation: Op='ADD', Fact='The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources.', ID='None'
+[2025-07-08 14:56:14.533506] [Mem0] HOST ACTION: ADDED new memory. ID: 98021dc7
+[2025-07-08 14:56:14.533585] Processing fact: 'There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources.'
+[2025-07-08 14:56:14.754495] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 98021dc7-d018-4ce9-98ba-f6d316917d4b, Fact: The current price of Bitcoin (BTC) is $109,117 USD according to the latest data from the external knowledge sources.
+- ID: 99a1d818-31cd-4591-bdb6-ec2cc1629c7b, Fact: Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities.
+- ID: 39951d33-d657-4b6a-a397-e7505fc2dbe3, Fact: There are reports of new product developments and company news from OpenAI.
+
+New Fact: "There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 14:56:16.777302] DEBUG: Raw LLM Response content:
+---
+{
+
+
+  "operation": "ADD",
+  "fact": "There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources."
+}
+---
+[2025-07-08 14:56:16.777407] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources."
+}
+---
+[2025-07-08 14:56:16.777441] LLM Decision for fact 'There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources.': {'operation': 'ADD', 'fact': 'There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources.'}
+[2025-07-08 14:56:16.777464] DEBUG: Executing DB operation: Op='ADD', Fact='There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources.', ID='None'
+[2025-07-08 14:56:16.999562] [Mem0] HOST ACTION: ADDED new memory. ID: dd54764a
+[2025-07-08 14:56:16.999635] Processing fact: 'The external knowledge sources do not provide a specific date for the current day.'
+[2025-07-08 14:56:17.190622] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 7a9ab9d0-a80b-4531-b919-a95cc23aba40, Fact: I currently do not have access to real-time weather data or external internet resources to check the current weather in Tehran.
+- ID: 99a1d818-31cd-4591-bdb6-ec2cc1629c7b, Fact: Reuters.com and Newsweek provide up-to-date coverage of OpenAI's activities.
+- ID: dd54764a-e69e-4b00-9713-4bca2ca11670, Fact: There are slight variations in reported prices across different entries (e.g., $108,778.16, $108,140.17, $108,027.00), which may reflect different time intervals or data sources.
+
+New Fact: "The external knowledge sources do not provide a specific date for the current day."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 14:56:18.083041] DEBUG: Raw LLM Response content:
+---
+{"operation": "ADD", "fact": "The external knowledge sources do not provide a specific date for the current day."}
+---
+[2025-07-08 14:56:18.083161] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "The external knowledge sources do not provide a specific date for the current day."
+}
+---
+[2025-07-08 14:56:18.083198] LLM Decision for fact 'The external knowledge sources do not provide a specific date for the current day.': {'operation': 'ADD', 'fact': 'The external knowledge sources do not provide a specific date for the current day.'}
+[2025-07-08 14:56:18.083221] DEBUG: Executing DB operation: Op='ADD', Fact='The external knowledge sources do not provide a specific date for the current day.', ID='None'
+[2025-07-08 14:56:18.292436] [Mem0] HOST ACTION: ADDED new memory. ID: 9ddcd01b
+[2025-07-08 15:00:00.326956] Processing conversation: 'User: شرکت تکاپو صنعت نامی چیه
+Assistant: <think>
+Okay, the user is asking about "شرکت تکاپو صنعت نامی" which translates to "Tekaapo Industrial Namie Company." Let me check the provided external knowledge first.
+
+Looking at the external knowledge section, there's a lot of information about this company. It mentions that they started operations in 1393 (which is 2014 in the Gregorian calendar) in the fields of technical design, engineering, and machinery. They have multiple patents and achieved international standards like ISO 9001:2015. The company is known as "Optim Park" under the commercial name, and it was established based on 60 years of experience in industrial equipment for steel, petrochemical, and power industries. They have a range of products and services, and their address details are provided.
+
+I need to structure this information clearly. Start with the company's name, when it was founded, their main areas of operation, achievements, and maybe their commercial name. Also, include the address details if relevant. Make sure to mention their focus on mechanical parking systems and industrial equipment. Avoid any markdown and keep the answer in Persian as per the user's query. Check if there's any conflicting information in the memory section, but it seems the memory doesn't have relevant info here. So, the answer should be based on the external knowledge provided.
+</think>
+
+شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) یک شرکت دانش‌بنیان در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه است که به منظور بهبود فضای کسب و کار و تطبیق با بافت سازمانی شرکت‌ها فعالیت می‌کند. این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است. با ثبت اختراعات متعدد و دستیابی به دانش فنی بین‌المللی، موفق به کسب استانداردهایی مانند ISO 9001:2015 شده است. 
+
+این شرکت با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی، به ویژه در صنایع فولاد، پetroشیمی و نیروگاهی، فعالیت می‌کند. تعداد کارکنان آن حدود ۱۰ تا ۵۰ نفر است. آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد.'
+[2025-07-08 15:00:00.327043] DEBUG: Extracting facts from:
+---
+User: شرکت تکاپو صنعت نامی چیه
+Assistant: <think>
+Okay, the user is asking about "شرکت تکاپو صنعت نامی" which translates to "Tekaapo Industrial Namie Company." Let me check the provided external knowledge first.
+
+Looking at the external knowledge section, there's a lot of information about this company. It mentions that they started operations in 1393 (which is 2014 in the Gregorian calendar) in the fields of technical design, engineering, and machinery. They have multiple patents and achieved international standards like ISO 9001:2015. The company is known as "Optim Park" under the commercial name, and it was established based on 60 years of experience in industrial equipment for steel, petrochemical, and power industries. They have a range of products and services, and their address details are provided.
+
+I need to structure this information clearly. Start with the company's name, when it was founded, their main areas of operation, achievements, and maybe their commercial name. Also, include the address details if relevant. Make sure to mention their focus on mechanical parking systems and industrial equipment. Avoid any markdown and keep the answer in Persian as per the user's query. Check if there's any conflicting information in the memory section, but it seems the memory doesn't have relevant info here. So, the answer should be based on the external knowledge provided.
+</think>
+
+شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) یک شرکت دانش‌بنیان در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه است که به منظور بهبود فضای کسب و کار و تطبیق با بافت سازمانی شرکت‌ها فعالیت می‌کند. این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است. با ثبت اختراعات متعدد و دستیابی به دانش فنی بین‌المللی، موفق به کسب استانداردهایی مانند ISO 9001:2015 شده است. 
+
+این شرکت با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی، به ویژه در صنایع فولاد، پetroشیمی و نیروگاهی، فعالیت می‌کند. تعداد کارکنان آن حدود ۱۰ تا ۵۰ نفر است. آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد.
+---
+[2025-07-08 15:00:09.694024] DEBUG: Raw fact extraction response:
+---
+{"facts": ["شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند.", "این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است.", "شرکت با ثبت اختراعات متعدد و دستیابی به استانداردهای بین‌المللی مانند ISO 9001:2015 موفق شده است.", "شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می‌کند.", "تعداد کارکنان شرکت حدود ۱۰ تا ۵۰ نفر است.", "آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد."]}
+---
+[2025-07-08 15:00:09.694328] Extracted facts: ['شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ\u200cهای مکانیزه فعالیت می\u200cکند.', 'این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه\u200cهای طراحی فنی، مهندسی و ماشین\u200cسازی شروع به فعالیت نموده است.', 'شرکت با ثبت اختراعات متعدد و دستیابی به استانداردهای بین\u200cالمللی مانند ISO 9001:2015 موفق شده است.', 'شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می\u200cکند.', 'تعداد کارکنان شرکت حدود ۱۰ تا ۵۰ نفر است.', 'آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد.']
+[2025-07-08 15:00:09.694403] Processing fact: 'شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند.'
+[2025-07-08 15:00:09.915012] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 7a9ab9d0-a80b-4531-b919-a95cc23aba40, Fact: I currently do not have access to real-time weather data or external internet resources to check the current weather in Tehran.
+- ID: cda271cc-8566-4603-ab37-8167f95979b3, Fact: Electrophilic aromatic substitution is a reaction mechanism in organic chemistry where an electrophile replaces a hydrogen atom on an aromatic ring.
+- ID: 761b8b9b-b0ac-41ac-80b4-7bc560c0138c, Fact: The process involves three steps: attack by the electrophile, loss of a proton, and restoration of aromaticity.
+
+New Fact: "شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 15:00:12.179903] DEBUG: Raw LLM Response content:
+---
+{"operation": "ADD", "fact": "شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند."}
+---
+[2025-07-08 15:00:12.180034] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "\u0634\u0631\u06a9\u062a \u062a\u06a9\u0627\u067e\u0648 \u0635\u0646\u0639\u062a \u0646\u0627\u0645\u06cc (\u0628\u0647 \u0646\u0627\u0645 \u062a\u062c\u0627\u0631\u06cc \u0627\u067e\u062a\u06cc\u0645 \u067e\u0627\u0631\u06a9) \u062f\u0631 \u0632\u0645\u06cc\u0646\u0647 \u0637\u0631\u0627\u062d\u06cc\u060c \u062a\u0648\u0633\u0639\u0647 \u0648 \u0633\u0627\u062e\u062a \u067e\u0627\u0631\u06a9\u06cc\u0646\u06af\u200c\u0647\u0627\u06cc \u0645\u06a9\u0627\u0646\u06cc\u0632\u0647 \u0641\u0639\u0627\u0644\u06cc\u062a \u0645\u06cc\u200c\u06a9\u0646\u062f."
+}
+---
+[2025-07-08 15:00:12.180075] LLM Decision for fact 'شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند.': {'operation': 'ADD', 'fact': 'شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ\u200cهای مکانیزه فعالیت می\u200cکند.'}
+[2025-07-08 15:00:12.180101] DEBUG: Executing DB operation: Op='ADD', Fact='شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند.', ID='None'
+[2025-07-08 15:00:12.405313] [Mem0] HOST ACTION: ADDED new memory. ID: 382937a6
+[2025-07-08 15:00:12.405390] Processing fact: 'این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است.'
+[2025-07-08 15:00:12.609722] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 382937a6-4a59-405f-8217-00e4db57ccdc, Fact: شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند.
+- ID: 7a9ab9d0-a80b-4531-b919-a95cc23aba40, Fact: I currently do not have access to real-time weather data or external internet resources to check the current weather in Tehran.
+- ID: 39951d33-d657-4b6a-a397-e7505fc2dbe3, Fact: There are reports of new product developments and company news from OpenAI.
+
+New Fact: "این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 15:00:14.747848] DEBUG: Raw LLM Response content:
+---
+{"operation": "ADD", "fact": "این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است."}
+---
+[2025-07-08 15:00:14.747958] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "\u0627\u06cc\u0646 \u0634\u0631\u06a9\u062a \u062f\u0631 \u0633\u0627\u0644 \u06f1\u06f3\u06f9\u06f3 (\u06f2\u06f0\u06f1\u06f4) \u062f\u0631 \u062d\u0648\u0632\u0647\u200c\u0647\u0627\u06cc \u0637\u0631\u0627\u062d\u06cc \u0641\u0646\u06cc\u060c \u0645\u0647\u0646\u062f\u0633\u06cc \u0648 \u0645\u0627\u0634\u06cc\u0646\u200c\u0633\u0627\u0632\u06cc \u0634\u0631\u0648\u0639 \u0628\u0647 \u0641\u0639\u0627\u0644\u06cc\u062a \u0646\u0645\u0648\u062f\u0647 \u0627\u0633\u062a."
+}
+---
+[2025-07-08 15:00:14.748008] LLM Decision for fact 'این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است.': {'operation': 'ADD', 'fact': 'این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه\u200cهای طراحی فنی، مهندسی و ماشین\u200cسازی شروع به فعالیت نموده است.'}
+[2025-07-08 15:00:14.748034] DEBUG: Executing DB operation: Op='ADD', Fact='این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است.', ID='None'
+[2025-07-08 15:00:14.974185] [Mem0] HOST ACTION: ADDED new memory. ID: 06f7bde9
+[2025-07-08 15:00:14.974258] Processing fact: 'شرکت با ثبت اختراعات متعدد و دستیابی به استانداردهای بین‌المللی مانند ISO 9001:2015 موفق شده است.'
+[2025-07-08 15:00:15.180871] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 06f7bde9-63f0-4c40-98a3-202add0b6d1c, Fact: این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است.
+- ID: 382937a6-4a59-405f-8217-00e4db57ccdc, Fact: شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند.
+- ID: 7a9ab9d0-a80b-4531-b919-a95cc23aba40, Fact: I currently do not have access to real-time weather data or external internet resources to check the current weather in Tehran.
+
+New Fact: "شرکت با ثبت اختراعات متعدد و دستیابی به استانداردهای بین‌المللی مانند ISO 9001:2015 موفق شده است."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 15:00:17.086555] DEBUG: Raw LLM Response content:
+---
+{
+
+
+  "operation": "ADD",
+  "fact": "شرکت با ثبت اختراعات متعدد و دستیابی به استانداردهای بین‌المللی مانند ISO 9001:2015 موفق شده است."
+}
+---
+[2025-07-08 15:00:17.086671] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "\u0634\u0631\u06a9\u062a \u0628\u0627 \u062b\u0628\u062a \u0627\u062e\u062a\u0631\u0627\u0639\u0627\u062a \u0645\u062a\u0639\u062f\u062f \u0648 \u062f\u0633\u062a\u06cc\u0627\u0628\u06cc \u0628\u0647 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f\u0647\u0627\u06cc \u0628\u06cc\u0646\u200c\u0627\u0644\u0645\u0644\u0644\u06cc \u0645\u0627\u0646\u0646\u062f ISO 9001:2015 \u0645\u0648\u0641\u0642 \u0634\u062f\u0647 \u0627\u0633\u062a."
+}
+---
+[2025-07-08 15:00:17.086713] LLM Decision for fact 'شرکت با ثبت اختراعات متعدد و دستیابی به استانداردهای بین‌المللی مانند ISO 9001:2015 موفق شده است.': {'operation': 'ADD', 'fact': 'شرکت با ثبت اختراعات متعدد و دستیابی به استانداردهای بین\u200cالمللی مانند ISO 9001:2015 موفق شده است.'}
+[2025-07-08 15:00:17.086749] DEBUG: Executing DB operation: Op='ADD', Fact='شرکت با ثبت اختراعات متعدد و دستیابی به استانداردهای بین‌المللی مانند ISO 9001:2015 موفق شده است.', ID='None'
+[2025-07-08 15:00:17.295995] [Mem0] HOST ACTION: ADDED new memory. ID: f34eb2fd
+[2025-07-08 15:00:17.296079] Processing fact: 'شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می‌کند.'
+[2025-07-08 15:00:17.491244] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 382937a6-4a59-405f-8217-00e4db57ccdc, Fact: شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند.
+- ID: 06f7bde9-63f0-4c40-98a3-202add0b6d1c, Fact: این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است.
+- ID: f34eb2fd-3912-4e18-8ec7-f1f4d4e987fe, Fact: شرکت با ثبت اختراعات متعدد و دستیابی به استانداردهای بین‌المللی مانند ISO 9001:2015 موفق شده است.
+
+New Fact: "شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می‌کند."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 15:00:19.563490] DEBUG: Raw LLM Response content:
+---
+{
+
+
+  "operation": "ADD",
+  "fact": "شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می‌کند."
+}
+---
+[2025-07-08 15:00:19.563591] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "\u0634\u0631\u06a9\u062a \u062a\u06a9\u0627\u067e\u0648 \u0635\u0646\u0639\u062a \u0646\u0627\u0645\u06cc \u0628\u0627 \u067e\u0634\u062a\u0648\u0627\u0646\u0647 \u06f6\u06f0 \u0633\u0627\u0644 \u062a\u062c\u0631\u0628\u0647 \u0645\u062f\u06cc\u0631\u0627\u0646 \u062f\u0631 \u0632\u0645\u06cc\u0646\u0647 \u062a\u062c\u0647\u06cc\u0632\u0627\u062a \u0635\u0646\u0639\u062a\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a \u0645\u06cc\u200c\u06a9\u0646\u062f."
+}
+---
+[2025-07-08 15:00:19.563630] LLM Decision for fact 'شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می‌کند.': {'operation': 'ADD', 'fact': 'شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می\u200cکند.'}
+[2025-07-08 15:00:19.563657] DEBUG: Executing DB operation: Op='ADD', Fact='شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می‌کند.', ID='None'
+[2025-07-08 15:00:19.759916] [Mem0] HOST ACTION: ADDED new memory. ID: 6b1b2552
+[2025-07-08 15:00:19.759991] Processing fact: 'تعداد کارکنان شرکت حدود ۱۰ تا ۵۰ نفر است.'
+[2025-07-08 15:00:19.960059] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 6b1b2552-951e-47b2-b651-14557ed6c983, Fact: شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می‌کند.
+- ID: 06f7bde9-63f0-4c40-98a3-202add0b6d1c, Fact: این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است.
+- ID: 382937a6-4a59-405f-8217-00e4db57ccdc, Fact: شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند.
+
+New Fact: "تعداد کارکنان شرکت حدود ۱۰ تا ۵۰ نفر است."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 15:00:21.295371] DEBUG: Raw LLM Response content:
+---
+{
+
+
+  "operation": "ADD",
+  "fact": "تعداد کارکنان شرکت حدود ۱۰ تا ۵۰ نفر است."
+}
+---
+[2025-07-08 15:00:21.295507] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "\u062a\u0639\u062f\u0627\u062f \u06a9\u0627\u0631\u06a9\u0646\u0627\u0646 \u0634\u0631\u06a9\u062a \u062d\u062f\u0648\u062f \u06f1\u06f0 \u062a\u0627 \u06f5\u06f0 \u0646\u0641\u0631 \u0627\u0633\u062a."
+}
+---
+[2025-07-08 15:00:21.295556] LLM Decision for fact 'تعداد کارکنان شرکت حدود ۱۰ تا ۵۰ نفر است.': {'operation': 'ADD', 'fact': 'تعداد کارکنان شرکت حدود ۱۰ تا ۵۰ نفر است.'}
+[2025-07-08 15:00:21.295586] DEBUG: Executing DB operation: Op='ADD', Fact='تعداد کارکنان شرکت حدود ۱۰ تا ۵۰ نفر است.', ID='None'
+[2025-07-08 15:00:21.505226] [Mem0] HOST ACTION: ADDED new memory. ID: 75a9d5bc
+[2025-07-08 15:00:21.505301] Processing fact: 'آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد.'
+[2025-07-08 15:00:21.715466] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: 6b1b2552-951e-47b2-b651-14557ed6c983, Fact: شرکت تکاپو صنعت نامی با پشتوانه ۶۰ سال تجربه مدیران در زمینه تجهیزات صنعتی فعالیت می‌کند.
+- ID: 382937a6-4a59-405f-8217-00e4db57ccdc, Fact: شرکت تکاپو صنعت نامی (به نام تجاری اپتیم پارک) در زمینه طراحی، توسعه و ساخت پارکینگ‌های مکانیزه فعالیت می‌کند.
+- ID: 06f7bde9-63f0-4c40-98a3-202add0b6d1c, Fact: این شرکت در سال ۱۳۹۳ (۲۰۱۴) در حوزه‌های طراحی فنی، مهندسی و ماشین‌سازی شروع به فعالیت نموده است.
+
+New Fact: "آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 15:00:24.341519] DEBUG: Raw LLM Response content:
+---
+{
+
+
+  "operation": "ADD",
+  "fact": "آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد."
+}
+---
+[2025-07-08 15:00:24.341629] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "\u0622\u062f\u0631\u0633 \u06a9\u0627\u0631\u062e\u0627\u0646\u0647 \u062f\u0631 \u0641\u0627\u0632 \u06f3-\u062e\u06cc\u0627\u0628\u0647 \u0628\u0644\u0627\u0646 \u06f5-\u067e\u0644\u0627\u06a9 \u06f1\u06f7 \u0648 \u062f\u0641\u062a\u0631 \u0645\u0631\u06a9\u0632\u06cc \u062f\u0631 \u0634\u0647\u0631\u06a9 \u0635\u0646\u0639\u062a\u06cc \u0645\u0628\u0627\u0631\u0643\u0647\u060c \u062e\u06cc\u0627\u0628\u0627\u0646 \u0627\u0635\u0644\u06cc \u0686\u0647\u0627\u0631\u0645\u060c \u062e\u06cc\u0627\u0628\u0627\u0646 \u067e\u0646\u062c\u0645-\u067e\u0644\u0627\u06a9 \u06f1\u06f7 \u0642\u0631\u0627\u0631 \u062f\u0627\u0631\u062f."
+}
+---
+[2025-07-08 15:00:24.341667] LLM Decision for fact 'آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد.': {'operation': 'ADD', 'fact': 'آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد.'}
+[2025-07-08 15:00:24.341694] DEBUG: Executing DB operation: Op='ADD', Fact='آدرس کارخانه در فاز ۳-خیابه بلان ۵-پلاک ۱۷ و دفتر مرکزی در شهرک صنعتی مباركه، خیابان اصلی چهارم، خیابان پنجم-پلاک ۱۷ قرار دارد.', ID='None'
+[2025-07-08 15:00:24.552741] [Mem0] HOST ACTION: ADDED new memory. ID: dd6d9ed7
+[2025-07-08 15:01:50.324470] Processing conversation: 'User: ویپ توی تلفن چیکار میکنه؟‌ تلفنه اصن؟‌مربوط به چیه؟ و چراغ DNS مودمم بوق میزنه
+Assistant: <think>
+Okay, the user is asking about their phone's Wi-Fi and the DNS light on their modem. Let me break down the questions.
+
+First, they mention "ویپ توی تلفن چیکار میکنه؟" which translates to "What does Wi-Fi on the phone do?" They might be confused about the function of Wi-Fi. I should explain that Wi-Fi allows the phone to connect to the internet through a router or modem without using mobile data.
+
+Next, they ask "تلفنه اصن؟" which might be a typo for "تلفنه اصلي؟" meaning "Is it the main phone?" or maybe "Is it the phone's problem?" I need to clarify if they're asking if the phone is the issue. Since the previous question was about Wi-Fi, maybe they're experiencing connectivity issues and suspect the phone.
+
+Then, "مربوط به چیه؟" translates to "What is it related to?" They're probably asking what the DNS light on the modem means. DNS (Domain Name System) translates website names into IP addresses. If the DNS light is blinking or on, it could indicate issues with DNS resolution, possibly due to incorrect settings, server problems, or network conflicts.
+
+Lastly, "چراغ DNS مودمم بوق میزنه" means the DNS light on the modem is blinking. This could signal that the modem is having trouble resolving domain names, leading to connectivity issues. Possible causes include misconfigured DNS settings, server downtime, or conflicts with the network.
+
+I should check if there are any known issues with the user's modem model or if they need to reset the modem. Also, suggest checking DNS settings, maybe switching to public DNS like Google's 8.8.8.8 or Cloudflare's 1.1.1.1. If the problem persists, advising them to contact their ISP or modem manufacturer might be necessary. Since the user mentioned a modem, they might be using a home network, so ensuring all devices are connected properly and there are no IP conflicts would be helpful.
+</think>
+
+برای پاسخ به سوالات شما:
+
+1. **ویپ (Wi-Fi) توی تلفن چیکار میکنه؟**  
+   Wi-Fi تلفن به اتصال تلفن به شبکه اینترنت از طریق یک روتر یا مودم می‌پردازد. این اتصال به جای استفاده از پریمیوم (کارت شبکه) از اینترنت رایگان یا پر سرعت استفاده می‌کند. اگر چراغ Wi-Fi روی تلفن خاموش یا به رنگ قرمز/قرمز است، ممکن است اتصال به شبکه اینترنت مشکل داشته باشد.
+
+2. **تلفنه اصلي؟**  
+   اگر به این سوال اشاره دارید که "تلفنه اصلي چیست؟"، معمولاً "تلفنه اصلي" به تلفن یا دستگاهی اشاره دارد که به صورت مستقیم به شبکه اینترنت متصل است (مثلاً مودم یا روتر). اما اگر به اتصال تلفن به شبکه اینترنت اشاره دارید، باید اتصال Wi-Fi یا اتصال اترنت را بررسی کنید.
+
+3. **چراغ DNS مودم بوق میزنه چه می‌کند؟**  
+   چراغ DNS (Domain Name System) روی مودم معمولاً نشان دهنده وضعیت اتصال DNS است. اگر این چراغ به صورت پیوسته یا با فاصله‌های کوتاه روشن باشد، ممکن است مشکلی در اتصال به سرویس‌های DNS (مانند تبدیل نام سایت به آدرس IP) وجود داشته باشد. این می‌تواند به علت‌هایی مانند:
+   - تنظیم نادرست DNS (مثلاً استفاده از DNS خارجی بدون اتصال به شبکه مربوطه).
+   - مشکل در سرویس DNS اینترنت (مثلاً سرور DNS اصلی پرداخته نشده).
+   - تداخل IP یا مشکل در اتصال اترنت/ Wi-Fi باشد.
+
+   **راه‌حل‌های پیشنهادی:**
+   - بررسی تنظیمات DNS مودم یا روتر (مثلاً استفاده از DNS عمومی مانند Google DNS (8.8.8.8) یا Cloudflare (1.1.1.1)).
+   - ریست مودم یا روتر.
+   - اتصال دستگاه‌های دیگر (مثلاً کامپیوتر) به شبکه و بررسی اینکه آیا مشکل فقط تلفن است یا تمامی دستگاه‌ها.
+   - اگر مشکل ادامه داشت، احتمالاً نیاز به اتصال به پشتیبانی مزودر یا ISP (خدمات اینترنت) است.
+
+اگر نیاز به توضیح بیشتری دارید یا اطلاعات ویژه‌ای در مورد مودم یا تلفن شما وجود دارد، لطفاً اعلام کنید.'
+[2025-07-08 15:01:50.324592] DEBUG: Extracting facts from:
+---
+User: ویپ توی تلفن چیکار میکنه؟‌ تلفنه اصن؟‌مربوط به چیه؟ و چراغ DNS مودمم بوق میزنه
+Assistant: <think>
+Okay, the user is asking about their phone's Wi-Fi and the DNS light on their modem. Let me break down the questions.
+
+First, they mention "ویپ توی تلفن چیکار میکنه؟" which translates to "What does Wi-Fi on the phone do?" They might be confused about the function of Wi-Fi. I should explain that Wi-Fi allows the phone to connect to the internet through a router or modem without using mobile data.
+
+Next, they ask "تلفنه اصن؟" which might be a typo for "تلفنه اصلي؟" meaning "Is it the main phone?" or maybe "Is it the phone's problem?" I need to clarify if they're asking if the phone is the issue. Since the previous question was about Wi-Fi, maybe they're experiencing connectivity issues and suspect the phone.
+
+Then, "مربوط به چیه؟" translates to "What is it related to?" They're probably asking what the DNS light on the modem means. DNS (Domain Name System) translates website names into IP addresses. If the DNS light is blinking or on, it could indicate issues with DNS resolution, possibly due to incorrect settings, server problems, or network conflicts.
+
+Lastly, "چراغ DNS مودمم بوق میزنه" means the DNS light on the modem is blinking. This could signal that the modem is having trouble resolving domain names, leading to connectivity issues. Possible causes include misconfigured DNS settings, server downtime, or conflicts with the network.
+
+I should check if there are any known issues with the user's modem model or if they need to reset the modem. Also, suggest checking DNS settings, maybe switching to public DNS like Google's 8.8.8.8 or Cloudflare's 1.1.1.1. If the problem persists, advising them to contact their ISP or modem manufacturer might be necessary. Since the user mentioned a modem, they might be using a home network, so ensuring all devices are connected properly and there are no IP conflicts would be helpful.
+</think>
+
+برای پاسخ به سوالات شما:
+
+1. **ویپ (Wi-Fi) توی تلفن چیکار میکنه؟**  
+   Wi-Fi تلفن به اتصال تلفن به شبکه اینترنت از طریق یک روتر یا مودم می‌پردازد. این اتصال به جای استفاده از پریمیوم (کارت شبکه) از اینترنت رایگان یا پر سرعت استفاده می‌کند. اگر چراغ Wi-Fi روی تلفن خاموش یا به رنگ قرمز/قرمز است، ممکن است اتصال به شبکه اینترنت مشکل داشته باشد.
+
+2. **تلفنه اصلي؟**  
+   اگر به این سوال اشاره دارید که "تلفنه اصلي چیست؟"، معمولاً "تلفنه اصلي" به تلفن یا دستگاهی اشاره دارد که به صورت مستقیم به شبکه اینترنت متصل است (مثلاً مودم یا روتر). اما اگر به اتصال تلفن به شبکه اینترنت اشاره دارید، باید اتصال Wi-Fi یا اتصال اترنت را بررسی کنید.
+
+3. **چراغ DNS مودم بوق میزنه چه می‌کند؟**  
+   چراغ DNS (Domain Name System) روی مودم معمولاً نشان دهنده وضعیت اتصال DNS است. اگر این چراغ به صورت پیوسته یا با فاصله‌های کوتاه روشن باشد، ممکن است مشکلی در اتصال به سرویس‌های DNS (مانند تبدیل نام سایت به آدرس IP) وجود داشته باشد. این می‌تواند به علت‌هایی مانند:
+   - تنظیم نادرست DNS (مثلاً استفاده از DNS خارجی بدون اتصال به شبکه مربوطه).
+   - مشکل در سرویس DNS اینترنت (مثلاً سرور DNS اصلی پرداخته نشده).
+   - تداخل IP یا مشکل در اتصال اترنت/ Wi-Fi باشد.
+
+   **راه‌حل‌های پیشنهادی:**
+   - بررسی تنظیمات DNS مودم یا روتر (مثلاً استفاده از DNS عمومی مانند Google DNS (8.8.8.8) یا Cloudflare (1.1.1.1)).
+   - ریست مودم یا روتر.
+   - اتصال دستگاه‌های دیگر (مثلاً کامپیوتر) به شبکه و بررسی اینکه آیا مشکل فقط تلفن است یا تمامی دستگاه‌ها.
+   - اگر مشکل ادامه داشت، احتمالاً نیاز به اتصال به پشتیبانی مزودر یا ISP (خدمات اینترنت) است.
+
+اگر نیاز به توضیح بیشتری دارید یا اطلاعات ویژه‌ای در مورد مودم یا تلفن شما وجود دارد، لطفاً اعلام کنید.
+---
+[2025-07-08 15:01:52.958334] DEBUG: Raw fact extraction response:
+---
+{"facts": ["Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data.", "The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues.", "The user is experiencing connectivity issues related to DNS resolution on their network."]}
+---
+[2025-07-08 15:01:52.958412] Extracted facts: ['Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data.', 'The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues.', 'The user is experiencing connectivity issues related to DNS resolution on their network.']
+[2025-07-08 15:01:52.958434] Processing fact: 'Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data.'
+[2025-07-08 15:01:53.163855] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: cee257da-f7af-434f-b311-e18e08c77a6e, Fact: DNS settings are configured through the modem's web interface or firmware.
+- ID: d60a4168-fbaf-4bf4-9d08-01aba676b4c2, Fact: There is no DNS button on any modem.
+- ID: 7a9ab9d0-a80b-4531-b919-a95cc23aba40, Fact: I currently do not have access to real-time weather data or external internet resources to check the current weather in Tehran.
+
+New Fact: "Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 15:01:54.178705] DEBUG: Raw LLM Response content:
+---
+{"operation": "ADD", "fact": "Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data."}
+---
+[2025-07-08 15:01:54.178810] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data."
+}
+---
+[2025-07-08 15:01:54.178843] LLM Decision for fact 'Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data.': {'operation': 'ADD', 'fact': 'Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data.'}
+[2025-07-08 15:01:54.178869] DEBUG: Executing DB operation: Op='ADD', Fact='Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data.', ID='None'
+[2025-07-08 15:01:54.390809] [Mem0] HOST ACTION: ADDED new memory. ID: fefe0da1
+[2025-07-08 15:01:54.390876] Processing fact: 'The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues.'
+[2025-07-08 15:01:54.610154] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: cee257da-f7af-434f-b311-e18e08c77a6e, Fact: DNS settings are configured through the modem's web interface or firmware.
+- ID: d60a4168-fbaf-4bf4-9d08-01aba676b4c2, Fact: There is no DNS button on any modem.
+- ID: fefe0da1-921e-4253-857a-b4a63b8cf91f, Fact: Wi-Fi on the phone connects to the internet via a router or modem instead of mobile data.
+
+New Fact: "The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 15:01:55.609528] DEBUG: Raw LLM Response content:
+---
+{
+
+
+  "operation": "ADD",
+  "fact": "The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues."
+}
+---
+[2025-07-08 15:01:55.609641] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues."
+}
+---
+[2025-07-08 15:01:55.609675] LLM Decision for fact 'The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues.': {'operation': 'ADD', 'fact': 'The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues.'}
+[2025-07-08 15:01:55.609699] DEBUG: Executing DB operation: Op='ADD', Fact='The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues.', ID='None'
+[2025-07-08 15:01:55.831494] [Mem0] HOST ACTION: ADDED new memory. ID: ffdaab61
+[2025-07-08 15:01:55.831573] Processing fact: 'The user is experiencing connectivity issues related to DNS resolution on their network.'
+[2025-07-08 15:01:56.035469] DEBUG: Prompt sent to LLM:
+---
+You are a memory consolidation system. Your goal is to maintain a concise and accurate fact store.
+
+Follow these rules:
+1. A correction (e.g., 'no, it's a DSL button') should ALWAYS be an UPDATE.
+2. If the "New Fact" is semantically identical or redundant to an "Existing Memory", you MUST use the "NOOP" operation. Do not add duplicate information.
+
+Based on the 'New Fact', decide if it should be added as a new memory, update an existing one, or be ignored.
+
+Existing Memories:
+- ID: ffdaab61-0f90-49dc-85ed-02ea9d6433ee, Fact: The DNS light on the modem indicates DNS resolution status; a blinking light may suggest DNS service issues.
+- ID: cee257da-f7af-434f-b311-e18e08c77a6e, Fact: DNS settings are configured through the modem's web interface or firmware.
+- ID: d60a4168-fbaf-4bf4-9d08-01aba676b4c2, Fact: There is no DNS button on any modem.
+
+New Fact: "The user is experiencing connectivity issues related to DNS resolution on their network."
+
+Your decision MUST be a single JSON object with either:
+1. {"operation": "ADD", "fact": "the new fact to add"}
+2. {"operation": "UPDATE", "memory_id": "the id of the memory to update", "updated_fact": "the new, corrected fact"}
+3. {"operation": "NOOP", "reason": "why no action is needed"}
+
+Decision:
+---
+[2025-07-08 15:01:56.917045] DEBUG: Raw LLM Response content:
+---
+{
+
+
+  "operation": "ADD",
+  "fact": "The user is experiencing connectivity issues related to DNS resolution on their network."
+}
+---
+[2025-07-08 15:01:56.917184] DEBUG: Parsed Decision:
+---
+{
+  "operation": "ADD",
+  "fact": "The user is experiencing connectivity issues related to DNS resolution on their network."
+}
+---
+[2025-07-08 15:01:56.917228] LLM Decision for fact 'The user is experiencing connectivity issues related to DNS resolution on their network.': {'operation': 'ADD', 'fact': 'The user is experiencing connectivity issues related to DNS resolution on their network.'}
+[2025-07-08 15:01:56.917257] DEBUG: Executing DB operation: Op='ADD', Fact='The user is experiencing connectivity issues related to DNS resolution on their network.', ID='None'
+[2025-07-08 15:01:57.127688] [Mem0] HOST ACTION: ADDED new memory. ID: 14863a16
