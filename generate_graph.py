@@ -54,7 +54,7 @@ def penman_to_dot(penman_string: str, sentence: str) -> Digraph:
 stog = amrlib.load_stog_model('model_parse_xfm_bart_large-v0_1_0', device='cpu')
 
 # The sentence to parse
-sentence = "The boy wants to go to the store."
+sentence = "An official with the ministry of education said that more than one million Chinese have studied abroad."
 
 # Parse the sentence into an AMR graph string
 graphs = stog.parse_sents([sentence])
@@ -64,7 +64,7 @@ graph_string = graphs[0]
 dot_graph = penman_to_dot(graph_string, sentence)
 
 # Render the graph to a file
-output_path = '/home/masih/Desktop/AMR/amr_graph_styled'
+output_path = '/home/masih/Desktop/AMR/amr_graph_showcase'
 dot_graph.render(output_path, format='png', view=False, cleanup=True)
 
-print(f"Styled AMR graph generated and saved as {output_path}.png")
+print(f"Showcase AMR graph generated and saved as {output_path}.png")
