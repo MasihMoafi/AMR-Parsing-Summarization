@@ -32,13 +32,24 @@ def create_enhanced_graph(sentence: str):
 
     # Create a mapping from generic node variables to specific labels
     enhancement_map = {}
+    nodes_to_remove = set()
     for inst in p_graph.instances():
         if inst.target == 'country' and 'chinese' in entities:
             enhancement_map[inst.source] = 'Chinese'
+            # Mark the child 'name' node for removal
+            for edge in p_graph.edges(source=inst.source):
+                if edge.role == ':name':
+                    nodes_to_remove.add(edge.target)
         if inst.target == 'government-organization' and 'the ministry of education' in entities:
             enhancement_map[inst.source] = 'Ministry of Education'
+            for edge in p_graph.edges(source=inst.source):
+                if edge.role == ':name':
+                    nodes_to_remove.add(edge.target)
         if inst.target == 'more-than':
             enhancement_map[inst.source] = 'more than one million'
+            for edge in p_graph.edges(source=inst.source):
+                if edge.role == ':op1':
+                    nodes_to_remove.add(edge.target)
 
     # Add nodes, using the enhanced map
     for inst in p_graph.instances():
@@ -54,10 +65,9 @@ def create_enhanced_graph(sentence: str):
         dot.node(node_var, label=node_label, fillcolor=fillcolor)
         print(f"  Added node: {node_var} -> {node_label}")
 
-    # Add edges, skipping those that are now redundant
+    # Add edges, and skip edges pointing to the now-redundant leaf nodes
     for edge in p_graph.edges():
-        # Don't draw the edges for concepts we've manually replaced
-        if edge.source in enhancement_map and edge.role in [':name', ':quant']:
+        if edge.target in nodes_to_remove:
             continue
         dot.edge(edge.source, edge.target, label=edge.role)
 
